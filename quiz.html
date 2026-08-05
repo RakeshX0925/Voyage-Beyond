@@ -1,0 +1,138 @@
+<!-- QUIZ PAGE -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz — Voyage Beyond</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="quiz.js"></script>
+</head>
+<body>
+
+  <header class="nav-glass">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="quiz.html" class="active">Quiz</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <h1 class="page-header">Space Quiz</h1>
+  <p class="page-subtitle">Answer all 5 questions and test your cosmic knowledge!</p>
+
+  <div class="wrapper">
+
+    <form id="quizForm">
+
+      <!-- Question 1 -->
+      <div class="question">
+        <h3>1. What is the largest planet in our Solar System?</h3>
+
+        <label>
+          <input type="radio" name="q1" value="Earth">
+          Earth
+        </label>
+
+        <label>
+          <input type="radio" name="q1" value="Jupiter">
+          Jupiter
+        </label>
+
+        <label>
+          <input type="radio" name="q1" value="Mars">
+          Mars
+        </label>
+      </div>
+
+      <!-- Question 2 -->
+      <div class="question">
+        <h3>2. What galaxy do we live in?</h3>
+
+        <label>
+          <input type="radio" name="q2" value="Whirlpool">
+          Whirlpool Galaxy
+        </label>
+
+        <label>
+          <input type="radio" name="q2" value="Andromeda">
+          Andromeda
+        </label>
+
+        <label>
+          <input type="radio" name="q2" value="Milky Way">
+          Milky Way
+        </label>
+      </div>
+
+      <!-- Question 3 -->
+      <div class="question">
+        <h3>3. What is the Sun?</h3>
+
+        <label>
+          <input type="radio" name="q3" value="Star">
+          A star
+        </label>
+
+        <label>
+          <input type="radio" name="q3" value="Planet">
+          A planet
+        </label>
+
+        <label>
+          <input type="radio" name="q3" value="Comet">
+          A comet
+        </label>
+      </div>
+
+      <!-- Question 4 -->
+      <div class="question">
+        <h3>4. What is the closest planet to the Sun?</h3>
+
+        <label>
+          <input type="radio" name="q4" value="Venus">
+          Venus
+        </label>
+
+        <label>
+          <input type="radio" name="q4" value="Mercury">
+          Mercury
+        </label>
+
+        <label>
+          <input type="radio" name="q4" value="Earth">
+          Earth
+        </label>
+      </div>
+
+      <!-- Question 5 -->
+      <div class="question">
+        <h3>5. What is the name of our galaxy's black hole?</h3>
+
+        <label>
+          <input type="radio" name="q5" value="Sagittarius A*">
+          Sagittarius A*
+        </label>
+
+        <label>
+          <input type="radio" name="q5" value="Cygnus X-1">
+          Cygnus X-1
+        </label>
+
+        <label>
+          <input type="radio" name="q5" value="Event Horizon">
+          Event Horizon
+        </label>
+      </div>
+
+      <button type="submit">Submit Answers</button>
+    </form>
+
+    <div id="result" class="result-box"></div>
+
+  </div>
+
+</body>
+</html>
