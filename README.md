@@ -15,6 +15,9 @@ Explore the mysteries of the universe through an interactive, visually stunning 
 </div>
 
 ---
+## 🌐 Live Demo
+
+🔗 **https://voyagebeyond0925.netlify.app/**
 
 # 🌌 About the Project
 
@@ -221,7 +224,7 @@ Passionate about
 - 💻 Programming
 - 🚀 Technology
 
-GitHub: **YOUR_GITHUB_USERNAME**
+GitHub: **RakeshX0925**
 
 ---
 
