@@ -245,3 +245,45 @@ It motivates me to build more exciting projects.
 ### 🚀 Happy Coding! 🚀
 
 </div>
+
+
+
+---
+
+# 🐍 Python-Powered Space Platform (Course Project)
+
+The repository now includes an initial Flask-based enhancement alongside the original static website.
+
+### Added Python features
+- Search and filter Solar System objects from a curated CSV dataset.
+- Compare two objects using planetary properties.
+- View descriptive statistics and a planetary diameter ranking.
+- Take a quiz and store scores in SQLite.
+- Explore a Jupyter Notebook for data checks and visualizations.
+
+### Run the Python application
+
+Use Python 3.10 or newer:
+
+```bash
+python -m venv .venv
+```
+
+Activate the environment, then run:
+
+```bash
+pip install -r requirements.txt
+python app.py
+```
+
+Open the local address printed by Flask. Routes include `/explorer`, `/compare`, `/analytics`, `/quiz`, and `/health`.
+
+Run the tests with:
+
+```bash
+pytest -q
+```
+
+Open `notebooks/space_data_analysis.ipynb` in Jupyter to work through the analysis.
+
+**Data note:** `data/planets.csv` is a starter transcription based on the planetary table used during planning. Verify the values against the original source and cite the source and access date in your final report. Blank measurements mean unavailable values, not zero. Moon counts and some source definitions can change or vary.
