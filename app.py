@@ -1,9 +1,10 @@
+import os
 from flask import Flask, flash, redirect, render_template, request, url_for
 from analytics import get_analytics, load_planets
 from database import get_quiz_summary, init_db, save_quiz_attempt
 
 app = Flask(__name__)
-app.config["SECRET_KEY"] = "change-this-development-key"
+app.config["SECRET_KEY"] = os.environ.get("FLASK_SECRET_KEY", "dev-only-change-me")
 init_db()
 
 QUIZ_QUESTIONS = [
