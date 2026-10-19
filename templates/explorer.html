@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Planet Explorer | Voyage Beyond{% endblock %}
+{% block content %}
+<section class="page-heading"><p class="eyebrow">MISSION 01</p><h1>Celestial Explorer</h1><p>Search the curated dataset. Blank values are shown as unavailable rather than guessed.</p></section>
+<form class="filters panel" method="get"><label>Search name<input name="q" value="{{ query }}" placeholder="e.g. Jupiter"></label><label>Object category<select name="category"><option value="">All objects</option>{% for item in ["Planet","Moon","Dwarf planet"] %}<option value="{{ item }}" {% if category == item %}selected{% endif %}>{{ item }}</option>{% endfor %}</select></label><button class="button" type="submit">Search</button><a class="button secondary" href="{{ url_for('explorer') }}">Reset</a></form>
+<section class="object-grid">
+{% for obj in objects %}<article class="object-card panel"><div class="object-top"><span class="planet-dot"></span><span class="tag">{{ obj.category }}</span></div><h2>{{ obj.name }}</h2><p>{{ obj.description }}</p><dl class="facts"><div><dt>Diameter</dt><dd>{% if obj.diameter_km != "" %}{{ "{:,.0f}".format(obj.diameter_km|float) }} km{% else %}N/A{% endif %}</dd></div><div><dt>Gravity</dt><dd>{% if obj.gravity_m_s2 != "" %}{{ obj.gravity_m_s2 }} m/s²{% else %}N/A{% endif %}</dd></div><div><dt>Orbital period</dt><dd>{% if obj.orbital_period_days != "" %}{{ "{:,.1f}".format(obj.orbital_period_days|float) }} days{% else %}N/A{% endif %}</dd></div><div><dt>Mean temperature</dt><dd>{% if obj.mean_temperature_c != "" %}{{ obj.mean_temperature_c }} °C{% else %}N/A{% endif %}</dd></div></dl><a class="text-link" href="{{ url_for('compare', first=obj.name, second='Earth') }}">Compare with Earth →</a></article>
+{% else %}<p class="panel empty">No objects matched your search. Try another name or reset the filters.</p>{% endfor %}
+</section>
+{% endblock %}
