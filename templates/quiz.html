@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Space Quiz | Voyage Beyond{% endblock %}
+{% block content %}
+<section class="page-heading"><p class="eyebrow">MISSION 04</p><h1>Test your cosmic knowledge</h1><p>Submit your answers to save a score in the local SQLite database.</p></section>
+<section class="panel section"><form method="post"><label>Your name<input name="player_name" maxlength="60" required placeholder="Enter a name for your score"></label>
+{% for question in questions %}{% set question_index = loop.index0 %}<fieldset class="question"><legend>{{ loop.index }}. {{ question.question }}</legend>{% for option in question.options %}<label class="option"><input type="radio" name="q{{ question_index }}" value="{{ option }}" required>{{ option }}</label>{% endfor %}</fieldset>{% endfor %}
+<button class="button" type="submit">Submit quiz</button></form></section>
+<section class="panel section"><h2>Learning statistics</h2><div class="stats"><article class="stat"><span>Attempts saved</span><strong>{{ summary.attempts }}</strong></article><article class="stat"><span>Average score</span><strong>{{ summary.average_percent }}%</strong></article></div><h3>Top attempts</h3>{% if summary.leaderboard %}<div class="table-wrap"><table><thead><tr><th>Name</th><th>Score</th><th>Percentage</th></tr></thead><tbody>{% for item in summary.leaderboard %}<tr><td>{{ item.player_name }}</td><td>{{ item.score }}/{{ item.total_questions }}</td><td>{{ item.percent }}%</td></tr>{% endfor %}</tbody></table></div>{% else %}<p class="muted">No attempts yet. Complete the quiz to create the first record.</p>{% endif %}</section>
+{% endblock %}
